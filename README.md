@@ -2,6 +2,9 @@
 
 A modern, responsive personal CV website showcasing my professional experience, skills, and achievements.
 
+## Screenshot
+![CV Website Screenshot](screenshot.png)
+
 ## Features
 
 - Responsive design that works on all devices
