@@ -96,22 +96,36 @@ header .title {
     color: #e0e0e0;
 }
 
+.download-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 1.5rem;
+    z-index: 100;
+}
+
 .download-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: white;
-    color: var(--primary-color);
-    padding: 0.5rem 1.2rem;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.4rem;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .download-btn:hover {
-    background-color: #f8f9fa;
+    background-color: #0055aa;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
@@ -634,8 +648,13 @@ footer {
         gap: 1.5rem;
     }
     
+    .download-container {
+        bottom: 0;
+        left: 1rem;
+    }
+    
     .download-btn {
-        padding: 0.4rem 1rem;
+        padding: 0.5rem 1.2rem;
         font-size: 0.9rem;
     }
     
@@ -717,20 +736,35 @@ footer {
 /* Print Styles */
 @media print {
     @page {
-        size: auto;
-        margin: 8mm;
+        size: A4;
+        margin: 0;
     }
     
     body {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
         background-color: white;
+        margin: 0;
+        padding: 0;
     }
     
     .container {
         margin: 0;
         box-shadow: none;
         max-width: 100%;
+        padding: 0;
+    }
+    
+    header {
+        background: linear-gradient(135deg, #0066cc, #003366) !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        padding: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    main {
+        padding: 0 1rem;
     }
     
     section {
@@ -739,15 +773,75 @@ footer {
         animation: none;
         opacity: 1;
         transform: none;
+        margin-bottom: 0.8rem;
     }
     
-    header, footer {
-        page-break-after: avoid;
-        break-after: avoid;
+    h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.2rem;
+        color: #0066cc;
     }
     
-    .download-btn, .back-to-top, .skills-filter {
-        display: none;
+    .timeline-item {
+        margin-bottom: 0.5rem;
+        padding-left: 20px;
+        position: relative;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    .project-card {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 0.8rem;
+        padding: 0.8rem;
+        border: 1px solid #eee;
+        border-radius: 4px;
+    }
+    
+    .skills-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    .skill-category {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        padding: 0.6rem;
+        border: 1px solid #eee;
+        border-radius: 4px;
+    }
+    
+    .cv-nav, .scroll-top, .dark-mode-toggle, .download-btn {
+        display: none !important;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-info a {
+        color: white !important;
+        text-decoration: none !important;
+    }
+    
+    .social-links, .filter-btn, footer, .project-links {
+        display: none !important;
+    }
+    
+    .language-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
 }
 

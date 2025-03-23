@@ -46,6 +46,57 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', () => {
         document.body.classList.add('loaded');
     });
+
+    // Add PDF download functionality
+    const downloadBtn = document.getElementById('downloadPDF');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', () => {
+            // Temporarily hide UI elements that shouldn't be in PDF
+            const elementsToHide = document.querySelectorAll('.cv-nav, .scroll-top, .dark-mode-toggle');
+            elementsToHide.forEach(el => el.style.display = 'none');
+            
+            // Set body to light mode for printing
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            if (isDarkMode) {
+                document.body.classList.remove('dark-mode');
+            }
+            
+            // Add print-specific class
+            document.body.classList.add('printing');
+            
+            // Create a clone of the container for printing
+            const container = document.querySelector('.container');
+            const printContainer = container.cloneNode(true);
+            printContainer.style.position = 'absolute';
+            printContainer.style.left = '-9999px';
+            document.body.appendChild(printContainer);
+            
+            // Set print settings
+            const printSettings = {
+                margin: 0,
+                scale: 1,
+                landscape: false,
+                printBackground: true,
+                preferCSSPageSize: true,
+                pageRanges: '1-2'
+            };
+            
+            // Trigger print with settings
+            window.print();
+            
+            // Clean up
+            document.body.removeChild(printContainer);
+            document.body.classList.remove('printing');
+            
+            // Restore UI elements
+            elementsToHide.forEach(el => el.style.display = '');
+            
+            // Restore dark mode if it was enabled
+            if (isDarkMode) {
+                document.body.classList.add('dark-mode');
+            }
+        });
+    }
 });
 
 // Create navigation menu (only for desktop)
