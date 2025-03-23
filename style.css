@@ -32,7 +32,6 @@ body {
     overflow: hidden;
 }
 
-/* Header Styles */
 header {
     background: linear-gradient(135deg, var(--primary-color), #003366);
     color: white;
@@ -80,8 +79,8 @@ header .title {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    font-size: 1.3rem;
+    gap: 1.5rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
@@ -89,6 +88,9 @@ header .title {
     color: white;
     text-decoration: none;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .social-links a:hover {
@@ -130,7 +132,6 @@ header .title {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-/* Main Content Styles */
 main {
     padding: 1.25rem;
 }
@@ -176,7 +177,6 @@ p {
     margin-bottom: 0.7rem;
 }
 
-/* Timeline Styles */
 .timeline {
     position: relative;
 }
@@ -236,7 +236,6 @@ p {
     margin-bottom: 0.3rem;
 }
 
-/* Skills Styles */
 .skills-filter {
     display: flex;
     flex-wrap: wrap;
@@ -289,7 +288,6 @@ p {
     transition: all 0.4s ease-in-out;
 }
 
-/* Fix for single skill type selected */
 .skills-container.filtered {
     display: flex;
     flex-wrap: wrap;
@@ -471,7 +469,6 @@ p {
     --skill-percent: 85%;
 }
 
-/* Projects Styles */
 .projects-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -483,6 +480,9 @@ p {
     border-radius: 6px;
     padding: 1.2rem;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -498,6 +498,7 @@ p {
 
 .project-card p {
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
 }
 
 .technologies {
@@ -506,32 +507,10 @@ p {
     font-style: italic;
 }
 
-.project-links {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 0.8rem;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    padding: 0.4rem 0.8rem;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    transition: var(--transition);
-}
-
-.btn:hover {
-    background-color: #0055aa;
-}
-
 .project-card ul {
     margin-left: 1rem;
     margin-bottom: 0.8rem;
+    flex-grow: 1;
 }
 
 .project-card li {
@@ -545,7 +524,31 @@ p {
     color: var(--text-light);
 }
 
-/* Certifications Styles */
+.project-links {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: auto;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    min-width: 120px;
+}
+
+.btn:hover {
+    background-color: #0055aa;
+}
+
 .certification-list {
     list-style-type: none;
 }
@@ -564,7 +567,6 @@ p {
     font-size: 0.9rem;
 }
 
-/* Languages Styles */
 .language-list {
     list-style-type: none;
     display: flex;
@@ -581,7 +583,6 @@ p {
     color: var(--text-color);
 }
 
-/* Footer Styles */
 footer {
     background-color: var(--secondary-color);
     text-align: center;
@@ -618,7 +619,6 @@ footer {
     transform: translateY(-2px);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         margin: 0;
@@ -733,7 +733,6 @@ footer {
     }
 }
 
-/* Print Styles */
 @media print {
     @page {
         size: A4;
@@ -845,12 +844,10 @@ footer {
     }
 }
 
-/* Achievements Styles */
 #achievements .timeline-item {
     margin-bottom: 1.2rem;
 }
 
-/* Volunteer Section Styles */
 #volunteer .timeline-item {
     margin-bottom: 1.5rem;
 }
