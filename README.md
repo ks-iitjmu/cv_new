@@ -8,11 +8,22 @@ A modern, responsive personal CV website showcasing my professional experience, 
 ## Features
 
 - Responsive design that works on all devices
-- Interactive skills section with filtering capabilities
-- Timeline-based education and experience sections
+- Interactive skills section with filtering capabilities and animated skill bars
+- Timeline-based education and experience sections with visual indicators
 - Project showcase with live demos and source code links
 - SEO optimized with structured data
 - Accessibility compliant
+- Modern UI with smooth animations and transitions
+- Print-friendly layout with optimized styling
+- Social media integration
+- Download CV functionality
+- Back to top button for better navigation
+- Dark mode support
+- Mobile-first approach with optimized touch interactions
+- Beautiful gradient headers and modern card designs
+- Interactive hover effects and micro-interactions
+- Clean typography and spacing
+- Cross-browser compatibility
 
 ## Technologies Used
 
