@@ -5,6 +5,15 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 :root {
     --primary-color: #0066cc;
     --secondary-color: #f5f5f5;
